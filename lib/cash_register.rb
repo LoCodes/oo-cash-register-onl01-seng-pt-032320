@@ -28,7 +28,7 @@ require 'pry'
 #     optionally takes an employee discount on initialization
 class CashRegister
 
-  attr_accessor :total, :items
+  attr_accessor :total, :items, :discount 
 
   items = []
 
@@ -69,6 +69,10 @@ class CashRegister
      else
        "There is no discount to apply."
      end
+   end
+
+   def items
+
    end
 
    def void_last_transaction
