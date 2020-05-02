@@ -49,9 +49,11 @@ class CashRegister
   #  also accepts an optional quantity (FAILED - 2)
   #  doesn't forget about the previous total (FAILED - 3)
 
-  def add_item(title, price, quantity = 1)
-    #binding.pry
-    self.total += price * quantity
+  def add_item(item, price, quantity = 1)
+    @total += price * quantity
+    quantity.times { @items.push(item) }
+    @last_transaction_price = price
+    @last_transaction_quantity = quantity
   end
 
   # #apply_discount
@@ -71,9 +73,9 @@ class CashRegister
      end
    end
 
-   def items
-     items << title
-   end
+  #  def items
+  #    items << title
+  #  end
 
    def void_last_transaction
      @last_transaction_quantity.times { @total -= @last_transaction_price }
