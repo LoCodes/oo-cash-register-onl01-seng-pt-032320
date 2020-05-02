@@ -72,7 +72,7 @@ class CashRegister
    end
 
    def items
-     
+     items << title
    end
 
    def void_last_transaction
