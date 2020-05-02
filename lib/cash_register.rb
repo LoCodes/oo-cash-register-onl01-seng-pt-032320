@@ -73,10 +73,13 @@ class CashRegister
      end
    end
 
-  #  def items
-  #    items << title
-  #  end
 
+
+
+
+  # #void_last_transaction
+  #   subtracts the last item from the total
+  #   returns the total to 0.0 if all items have been removed
    def void_last_transaction
      @last_transaction_quantity.times { @total -= @last_transaction_price }
    end
