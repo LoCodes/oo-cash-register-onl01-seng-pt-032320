@@ -70,9 +70,9 @@ class CashRegister
        "There is no discount to apply."
      end
    end
-   
+
    def void_last_transaction
      @last_transaction_quantity.times { @total -= @last_transaction_price }
    end
-   
+
  end
