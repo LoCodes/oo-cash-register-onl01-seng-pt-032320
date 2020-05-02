@@ -56,6 +56,10 @@ class CashRegister
     @last_transaction_quantity = quantity
   end
 
+  # #items
+  #    returns an array containing all items that have been added   ????
+
+
   # #apply_discount
   # the cash register was initialized with an employee discount
   #   applies the discount to the total price
