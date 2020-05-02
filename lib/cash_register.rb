@@ -63,10 +63,16 @@ class CashRegister
   #   returns a string error message that there is no discount to apply
 
   def apply_discount
-    if @discount != 0
-     @total -= (@discount / 100.0) * @total
-     "After the discount, the total comes to $#{@total.to_i}."
-   else
-     "There is no discount to apply."
+     if @discount != 0
+       @total -= (@discount / 100.0) * @total
+       "After the discount, the total comes to $#{@total.to_i}."
+     else
+       "There is no discount to apply."
+     end
    end
- end 
+   
+   def void_last_transaction
+     @last_transaction_quantity.times { @total -= @last_transaction_price }
+   end
+   
+ end
